@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Include your custom script -->
+    <script src="script.js"></script>
+
+    <style>
+        /* Custom styles for category buttons */
+        #category-icons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .icon-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin: 5px;
+            padding: 0;
+            position: relative;
+        }
+
+        .icon-btn i {
+            line-height: 50px;
+        }
+
+        /* Position category titles */
+        .icon-btn small {
+            position: absolute;
+            bottom: -20px; /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px; /* Adjust as needed */
+            white-space: nowrap;
+            color: #333; /* Title color */
+        }
+
+        /* Highlight active state */
+        .icon-btn.active {
+            background-color: #e1e1e1; /* Adjust as needed */
+            color: #fff; /* Adjust as needed */
+        }   
+
+        /* Custom styles for making table fixed on mobile */
+        @media (max-width: 767px) {
+            .table-responsive {
+                overflow-x: auto;
+            }
+        }
+
+        /* Adjust margin for h1 element and logout button */
+        h1, .logout-button {
+            margin-top: 30px;
+        }
+
+        /* Adjust margin for summary section */
+        #total-expenses {
+            margin-top: 20px;
+            font-size: 32px; /* Increased font size */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center my-4">
+            <h1>Expense Tracker</h1>
+            <div>
+                <a href="index.html" class="btn btn-secondary mr-2"><i class="bi bi-arrow-left"></i></a>
+                <a href="login.html" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i></a>
+            </div>
+        </div>
+        <h3 id="username-greeting"></h3> <!-- Added greeting subheading -->
+        <!-- Summary section -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h3 class="card-title">Total Expenses</h3>
+                <p id="total-expenses">RM 0</p>
+            </div>
+        </div>
+        <!-- Existing content -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <form id="expense-form">
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <div id="category-icons">
+                            <button type="button" class="btn btn-outline-secondary rounded-circle icon-btn" data-category="Food" title="Food"><i class="bi bi-cake2"></i><br><small>Food</small></button>
+                            <button type="button" class="btn btn-outline-secondary rounded-circle icon-btn" data-category="Shopping" title="Shopping"><i class="bi bi-bag-heart"></i><br><small>Shopping</small></button>
+                            <button type="button" class="btn btn-outline-secondary rounded-circle icon-btn" data-category="Bills" title="Bills"><i class="bi bi-cash-coin"></i><br><small>Bills</small></button>
+                            <button type="button" class="btn btn-outline-secondary rounded-circle icon-btn" data-category="Others" title="Others"><i class="bi bi-clipboard2-heart"></i><br><small>Others</small></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Add Expense</button>
+                </form>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Expenses</h3>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-striped" id="expense-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Expenses will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

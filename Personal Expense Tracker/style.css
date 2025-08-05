@@ -1,0 +1,133 @@
+/* style.css */
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+/* Make headings responsive */
+h1, h3 {
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+/* Card styles */
+.card {
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Button styles */
+.btn {
+    margin-bottom: 10px;
+}
+
+/* Responsive table */
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+/* Make the table scrollable */
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767.98px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .text-center {
+        text-align: center !important;
+    }
+
+    .my-4 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .btn-block {
+        display: block;
+        width: 100%;
+    }
+
+    .btn-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .icon-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .icon-btn small {
+        font-size: 10px;
+    }
+
+    .form-control {
+        font-size: 0.875rem;
+    }
+
+    .table-responsive {
+        border: 0;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+}

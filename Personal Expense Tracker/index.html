@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+    <!-- Include jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 350px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 90px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px; /* Added margin-bottom for a small gap */
+            margin-top: 90px;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            width: 250px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .btn-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .fixed-bottom-right {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .form-control {
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .btn-danger {
+            border-radius: 5px;
+        }
+
+        h1, h3 {
+            margin: 20px 0;
+        }
+
+        p {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        a {
+            color: #007bff;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .logout-button-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 10px;
+            }
+
+            .logo-container {
+                margin-top: -30px;
+            }
+        }
+
+        /* Styles for the add options */
+        #add-options {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-button-container">
+        <a href="login.html" class="btn btn-danger"><i class="bi bi-box-arrow-right"></i></a>
+    </div>
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo 2.png" alt="Logo" class="logo">
+        </div>
+        <div class="header">
+            <h1>Expense Tracker</h1>
+        </div>
+        <div class="text-left">
+            <h3 id="username-greeting"></h3>
+        </div>
+        <div class="text-center">
+            <h3>Select Month</h3>
+            <input type="text" id="datepicker" class="form-control" placeholder="Select Month">
+        </div>
+        <div class="text-center mt-4">
+            <h3>Summary</h3>
+            <div id="summary-placeholder">
+                <canvas id="expenseChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add button and options -->
+    <div class="fixed-bottom-right">
+        <button id="add-button" class="btn btn-primary btn-circle"><i class="bi bi-plus-circle"></i></button>
+        <div id="add-options">
+            <a href="expenses.html" class="btn btn-primary btn-block">Add Your Expenses</a>
+        </div>
+    </div>
+
+    <!-- Include jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Include Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <!-- Include your scripts -->
+    <script src="script.js"></script>
+    <script src="chart.js"></script>
+    <script>
+        // JavaScript for toggling add options
+        $(document).ready(function(){
+            $('#add-button').click(function(){
+                $('#add-options').toggle();
+            });
+        });
+    </script>
+</body>
+</html>
