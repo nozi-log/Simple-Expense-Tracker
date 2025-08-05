@@ -1,4 +1,4 @@
-# Simple-Expense-Tracker
+# Simple-Personal-Expense-Tracker
 - HTML
 - CSS
 - JAVASCRIPT
